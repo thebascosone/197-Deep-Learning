@@ -116,12 +116,14 @@ if __name__ == "__main__":
         "resnet18": resnet18,
         "atienza": atienza,
         "ancheta": ancheta,
+        "bascos": models.regnet_x_1_6gf(),
     }
 
     # Add the transforms in your recipe, litdataloader has its own
     # but it's recommended to use the transforms in your recipe
     transform_selector = {
         "ancheta": SqueezeNet1_1_Weights.IMAGENET1K_V1.transforms(),
+        "bascos": RegNet_X_1_6GF_Weights.IMAGENET1k_V1.transforms(),
     }
 
     # Sometimes accuracy barely changes so you should choose
