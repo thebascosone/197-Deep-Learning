@@ -210,6 +210,7 @@ if __name__ == "__main__":
     # but it's recommended to use the transforms in your recipe
     transform_selector = {
         "ancheta": SqueezeNet1_1_Weights.IMAGENET1K_V1.transforms(),
+        "bascos": RegNet_X_1_6GF_Weights.IMAGENET1K_V1.transforms(),
     }
 
     # Sometimes accuracy barely changes so you should choose
@@ -229,7 +230,7 @@ if __name__ == "__main__":
 
     # Sometimes the recipe specifies a learning rate scheduler
     scheduler_selector = {
-        "bascos": "torch.optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=100, eta_min=0.001)",
+        "bascos": "torch.optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=100, eta_min=0.01)",
         "diosana": "torch.optim.lr_scheduler.StepLR(optimizer=optimizer, step_size=2, gamma=0.973)",
     }
 
